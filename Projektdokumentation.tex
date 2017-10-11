@@ -21,6 +21,18 @@
 % We want SI units!!!
 \usepackage{siunitx}
 
+% Formeln
+\usepackage{amsfonts}
+
+% Formeln
+\usepackage{amsmath}
+
+% Definierte Spaltenbreiten bei Tabellen
+\usepackage{array}
+
+% Seitenorientierung ändern
+\usepackage{pdflscape}
+
 % Use biblatex
 \usepackage[style=apa,backend=biber,citestyle=authoryear]{biblatex} 
 
@@ -614,6 +626,121 @@ TODO Sammlung verschiedener Technologien: Plattformen, Programmiersprachen und B
 	\hline
 	Gyroskop Physikalische Grundlagen & https://gpr.physik.hu-berlin.de/Skripten/Physik\%20als\%20Nebenfach/PDF-Dateien/M10.pdf \\
 	\hline
+\end{tabular}
+
+\section{Masse des Klotzes}
+	Die Masse des Klotzes lässt sich leicht mit der unten Beschriebenen Formel abschätzen.  \\
+		\begin{center} 
+			$m=V*\rho$ \\
+		\end{center} 
+ 	\vspace*{1mm} 
+		$V_{Klotz}=(5cm)^3=125*10^{-6} m^3$ \\
+	\vspace*{8mm} 
+		$\rho_{Buche}=690\frac{kg}{m^3}$, \hspace{5mm} 	$\rho_{Tanne}= 410\frac{kg}{m^3}$ \\
+	\vspace{15mm}
+		$\Rightarrow$ \hspace{10mm}  $m_{Buche} \approx 86.25$g \hspace*{10mm} $m_{Tanne} \approx 51.25$g
+		
+\section{Aufhängung}
+	\subsection{Rollen}
+		Rollen sind auf Modellbauseiten in Praktisch allen grössen erhältlich, falls nötig wäre auch eine kostengünstige Nachbearbeitung möglich.
+	\subsection{Federn und Dämpfer}
+		Öldruckstossdämpfer sind im Internet für eine Länge von 55-110mm erhältlich. Ihre Dämpflänge liegt zwischen 10-20mm. Bei einigen Modellen kann man die Dämpflänge variieren. \\
+		Federn sind als Normteile in praktisch allen möglichen Ausführungen erhältlich. Die kleinsten Durchmesser einer Drehfeder liegt bei ca. 3mm. Das Moment welches übertragen werden kann, liegt bei dieser grösse bei 2.3Nmm
+
+\section{Antiebsübertragung}
+	\subsection{Riemen \& Riemenscheibe}
+		Kleine Zahnriemen sind mit einem Umfang von 245-800mm erhältlich. Der kleinste Durchmesser von der passenden Riemenscheibe beträgt 26mm und hat eine Bohrung von \O \,6mm. Die Bohrung kann ohne weiteres auf den Motorflansch angepasst werden.
+
+\section{Sensoren}
+Aufbau von einem Sensor IC. Beliebte Schnittstellen sind I2C und SPI.
+
+\includegraphics[width=\textwidth,keepaspectratio]{daq}
+
+\paragraph{} Ansteuern von I2C Sensoren durch bitbanging
+https://calcium3000.wordpress.com/2016/08/19/i2c-bit-banging-tutorial-part-i/
+
+\subsection{Inertial Measurement Unit}
+\paragraph{} Eine IMU enthält ein x-y-z Beschleunigungssensor und x-y-z
+Gyroskop. Dient zur Unterstützung der Bilderkennung und der Distanz
+Messungen. Auch wenn schlussendlich keine IMU benötigt wird ist es trotzdem
+ratsam eine zu verbauen, da es schlecht nachträglich hinzugefügt werden kann.
+
+\paragraph{} Mögliche Kandidaten:
+\begin{itemize}
+\item LSM6DS3US
+\item Kommunikationsinterface: I2C oder SPI
+\item Stuckpreis: 3 CHF
+\item Datenblatt: https://goo.gl/erby3f
+\end{itemize}
+
+\subsection{Distanz Sensoren}
+\includegraphics[width=\textwidth]{distance-sensors}
+
+Daraus schliessen wir das Ultraschall oder Photoelektrische Sensoren für unsere Anwendung am Besten geeignet sind.
+
+Sensorwahl - Was gibt es zu beachten:\\
+http://www-mech.eng.cam.ac.uk/profiles/fleck/papers/134.pdf
+
+\subsubsection{Distanz Messung in Z-Richtung}
+\paragraph{} Assistieren der Bilderkennung beim erkennen von Hindernissen und
+abschätzen der Z-Höhe des Ladegutes. Je nach dem was für einen Motor gewählt
+wird kann dieser zur Abschätzung beitragen wie auch der Beschleunigungssensor
+in Z-Richtung. Je nach Grösse der Schwankungen in Y-Richtung kann das Gyroskop
+in Y-Richtung auch zur präzise Messung beitragen.
+
+\paragraph{} Anforderungen
+\begin{itemize}
+\item Reichweite: 60cm-110cm
+\item Genauigkeit: 1cm
+\end{itemize}
+
+\paragraph{} Mögliche Kandidaten:
+\begin{itemize}
+\item Kandidat: VCNL4200
+\item Kommunikationsinterface: I2C
+\item Stuckpreis: 3 CHF
+\item Datenblatt: https://www.vishay.com/optical-sensors/list/product-84430/
+\end{itemize}
+
+\subsubsection{Distanz Messung in X-Richtung}
+Genaue Positionsbestimmung auf der X-Achse.\\
+Mögliche Lösungsansätze (oder Kombination von Lösungsansätze) zu
+evaluieren
+\begin{itemize}
+\item Ultraschall oder Photoelektrische Sensoren, obwohl aufgrund der Zeichnung das fehlen einer schönen Fläche vorne oder hinten zum Problem werden könnte.
+\item Positionsbestimmung durch messen abgefahrener Strecke
+\item Positionsbestimmung durch messen der Beschleunigung in X-Richtung
+\item Positionsbestimmung durch Feature-Tracking
+\end{itemize}
+
+\subsection{Kamera}
+
+\subsubsection{Optik}
+\begin{itemize}
+\item field of view
+\item depth of field
+\end{itemize}
+
+\subsubsection{Bild Sensor}
+\begin{itemize}
+\item shutter speed (exposure time)
+\item sampling pitch (higher resolution means less light sensitivity)
+\item fill factor (spacing of photosensitive elements in camera sensor)
+\item chip size
+\item analog gain
+\item sensor noise
+\item resolution and noise of A/D
+\end{itemize}
+
+\subsection{Multisensor Data Fusion}
+Kalman filter - werden verwendet um aus unterschiedlichen Messwerte aus
+verschiedenen Quellen die bestmögliche Schätzung zu erstellen:
+
+\vspace{1em}
+\noindent
+\begin{tabular}{|p{0.2\textwidth}|p{0.8\textwidth}|}
+	\hline
+	\textbf{Beschreibung} & \textbf{Quelle} \\
 	Kreiselphänomene & https://www.uni-muenster.de/imperia/md/content/fachbereich\_physik/didaktik\_physik/publikationen/kreisel.pdf \\
 	\hline
 	verschiedene Dämpfer & https://www.researchgate.net/profile/Okyay\_Altay/publication/280598766\_Flussigkeitsdampfer\_zur\_Reduktion\_periodischer\_und\_stochastischer\_Schwingungen\_turmartiger\_Bauwerke/links/58bc24d045851591c5e3f6db/Fluessigkeitsdaempfer-zur-Reduktion-periodischer-und-stochastischer-Schwingungen-turmartiger-Bauwerke.pdf \\
