@@ -1101,23 +1101,23 @@ Einfach, Problem Abschirmung \& Fremdsignale.
 	\hhline{|b:=|=|=|=|=|=|=|=|=|=:b|}
 	Gewicht& 3 & 2 & 6 & 1 & 3 & 5 & 15 & 5 & 15 \\
 	\hline
-	Realisierbarkeit& 5 & 5 & 25 & 4 & 20 & 1 & 5 & 1 & 5 \\
+	Realisierbarkeit& 5 & 3 & 15 & 4 & 20 & 1 & 5 & 1 & 5 \\
 	\hline
-	Kosten& 3 & 5 & 15 & 3 & 9 & 2 & 6 & 1 & 3 \\
+	Kosten& 3 & 3 & 9 & 3 & 9 & 2 & 6 & 1 & 3 \\
 	\hline
-	Herstellungsaufwand& 3 & 4 & 12 & 3 & 9 & 1 & 3 & 1 & 3 \\
+	Herstellungsaufwand& 3 & 3 & 9 & 3 & 9 & 1 & 3 & 1 & 3 \\
 	\hline
 	Energieverbrauch& 4 & 2 & 8 & 2 & 8 & 2 & 8 & 3 & 12 \\
 	\hline
 	Geschwindigkeit (Antrieb)& 4 & 3 & 12 & 3 & 12 & 2 & 8 & 3 & 12 \\
 	\hline
-	Balance (Schwanken)& 2 & 2 & 4 & 2 & 4 & 3 & 6 & 4 & 8 \\
+	Balance (Schwanken)& 2 & 3 & 6 & 2 & 4 & 3 & 6 & 4 & 8 \\
 	\hline
 	Absetzgenauigkeit& 3 & 2 & 6 & 3 & 9 & 3 & 9 & 3 & 9 \\
 	\hline
 	Last Greifen& 4 & 4 & 16& 4 & 16 & 4 & 16 & 3 & 12 \\
 	\hline
-	Ausfallsicherheit& 5 & 3 & 15 & 4 & 20 & 4 & 20 & 1 & 5 \\
+	Ausfallsicherheit& 5 & 3 & 15 & 4 & 20 & 2 & 10 & 1 & 5 \\
 	\hline
 	Ästhetik& 1 & 1 & 1 & 2 & 2 & 3 & 3 & 3 & 3 \\
 	\hline
@@ -1133,14 +1133,22 @@ Einfach, Problem Abschirmung \& Fremdsignale.
 	\hhline{|-|-|=|=|=|=|=|=|=|=|}
 	\multicolumn{2}{c|}{}& \textbf{Rang} & \textbf{Total} & \textbf{Rang} & \textbf{Total} & \textbf{Rang} & \textbf{Total} & \textbf{Rang} & \textbf{Total} \\
 	\cline{3-10}
-	\multicolumn{2}{c|}{}& \cellcolor{lightgray} \textbf{1} & 120 & \textbf{2} & 112 & \textbf{3} & 99 & \textbf{4} & 87 \\
+	\multicolumn{2}{c|}{}& \textbf{2} & 103 & \cellcolor{lightgray} \textbf{1} & 112 & \textbf{3} & 89 & \textbf{4} & 87 \\
 	\cline{3-10}
 	\end{tabular}
 \end{landscape}
 
 \subsection{Auswertung}
-\subsection*{Gewicht}
-\textbf{Variante 1:}
+
+\textbf{Variante 1: Gondel zweifach}\\
+Der Hauptgrund, wieso diese Variante der Variante 2 das Nachsehen hatte, liegt hauptsächlich an der Realisierbarkeit. Durch die zwei auseinanderliegenden Rollen würde wegen den verschiedenen Steigungen am Seil das Gerät sich nicht mehr in horizontaler Lage befinden. Dies auszugleichen würde den Aufwand und auch die Kosten stark erhöhen. Zudem könnte die Absetzgenauigkeit beeinträchtigt werden, da die Kamera ebenfalls nicht horizontal liegen würde. Auch die Last heben und senken mit einem Seil kann durch die Beschleunigung in Schwingung geraten und das Absetzen Massiv erschweren. Ein grosser Vorteil liegt aber in der Stabilität des Gerätes gegen Schwanken in x-Richtung da das Gerät zweifach aufgehängt wäre.  \\
+\\
+\textbf{Variante 2: Geklemmt}\\
+Durch die Gelenkige Aufhängung des Gerätes ist die Horizontale Lage durch den Schwerpunkt gegeben. Ein Problem könnte aber im Vergleich zur Variante 1 die Schwankung sein. Diese ist aber mit Dämpfer zu vermindern oder gar ganz zu vermieden. Weil die Horizontale Lage nicht erzwungen werden muss, ist es auch einfacher zu Realisieren. Durch die Zahnstange kann die Absetzgenauigkeit verbessert werden, da diese weniger stark in Schwingung gerät als das Seil. Das Gewicht ist aber durch die Zahnstange hoch. Zudem überragt die hochgezogene Stange das Seil, was Schwankungen begünstigen kann.  \\
+\\
+\textbf{Variante 3: Zeppelin}
+Der grösste Vorteil ist, dass durch den Heliumbalon die Gewichtskraft massiv verringert werden kann. Es kann auch bei der Antriebsleistung für die Fortbewegung und somit auch bei der Akkuleistung eingespart werden. Der Hebemechanismus ist mit einem gelochten T-profil gelöst, welches gleichzeitig stark gegen Biegung und leicht ist. Die Probleme sind aber die Realisierbarkeit und die Ausfallsicherheit. Der Heliumballon müsste sehr gross werden um einen Nennenswerten Einfluss auf die Gewichtskraft zu bewirken. Zudem kann Wind auftreten währen dem Fahren, was den Heliumballon stark beeinflusst. Die würde sehr wahrscheinlich zu einem Aussfall des gesamten Gerätes führen.
+
 
 \section{Elektronik}
 \subsection{Blockdiagramm}
