@@ -157,13 +157,13 @@ Horw, \today
 \label{ch:Intro}
 % TODO EVE
 
-Dieses Dokument beschreibt den Entwicklungsprozess einer autonomen Laufkatze. Dabei handelt es sich um ein interdiszpilinäres Projekt, welches über zwei Semester an der Hochschule Luzern absolviert wurde. In diesem Projekt musste mit einem begrenzten Budget gearbeitet und vielseitige Herausforderungen bewältigt werden.
+Dieses Dokument beschreibt den Entwicklungsprozess einer autonomen Laufkatze. Dabei handelt es sich um ein interdiszpilinäres Projekt, welches über zwei Semester an der Hochschule Luzern absolviert wird. In diesem Projekt muss mit einem begrenzten Budget gearbeitet und vielseitige Herausforderungen bewältigt werden.
 
-In einer ersten Phase wurden vor allem Arbeitsprozesse ausgearbeitet, Recherchen betrieben und Konzepte entwickelt. Den schon frühen Entscheid mit \LaTeX die Dokumentation zu gestalten schien zuerst gewagt, die einzelnen Teammitglieder lernten jedoch schnell mit diesem neuen Werkzeug zu arbeiten.
+In einer ersten Phase werden vor allem Arbeitsprozesse ausgearbeitet, Recherchen betrieben und Konzepte entwickelt. Den frühen Entscheid mit \LaTeX die Dokumentation zu gestalten scheint zuerst gewagt, die einzelnen Teammitglieder lernen jedoch schnell mit diesem neuen Werkzeug zu arbeiten.
 
 \section{Kurzbeschrieb Anforderungen}
 \label{sec:KurzAnforder}
-Das Gerät muss sich autonom entlang eines ansteigenden Drahtseil fortbewegen können. Die Last muss an einem fix bestimmten Ort aufgehoben werden, ohne Berührung über die folgenden Hindernisse transportiert und danach möglichst exakt auf einer Zielplatte im Absetzbereich abgesetzt werden (siehe Abb.\ref{fig:Funktionsskizze}). Nach dem Absetzen der Last muss das Gerät den Zielraum erreichen und den Masten berühren. Die Zielplatte muss das Gerät selbstständig erkennen können. Das Gerät darf nur die Last, das Drahtseil und den zweiten Masten berühren. Nach Aufnahme der Last muss die aktuelle Position der Last in x-, und z-Richtung in Echtzeit dargestellt werden. Das Gerät muss innerhalb von zwei Minuten startbereit sein. Die Zeit um den Zielraum zu erreichen liegt bei maximal vier Minuten. In der Abbildung \ref{fig:Ablaufdiagramm} sehen Sie eine anschauliche Darstellung des Ablaufs.
+Das Gerät muss sich autonom entlang eines ansteigenden Drahtseils fortbewegen. Die Last muss an einem fix bestimmten Ort angehoben, ohne Berührung über die folgenden Hindernisse transportiert und danach möglichst exakt auf einer Zielplatte im Absetzbereich abgesetzt werden (siehe Abb.\ref{fig:Funktionsskizze}). Nach dem Absetzen der Last muss das Gerät den Zielraum erreichen und den Masten berühren. Die Zielplatte muss das Gerät selbstständig erkennen können. Das Gerät darf nur die Last, das Drahtseil und den zweiten Masten berühren. Nach Aufnahme der Last muss die aktuelle Position der Last in x-, und z-Richtung in Echtzeit dargestellt werden. Das Gerät muss innerhalb von zwei Minuten startbereit sein. Die Zeit um den Zielraum zu erreichen liegt bei maximal vier Minuten. In der Abbildung \ref{fig:Ablaufdiagramm} sehen Sie eine anschauliche Darstellung des Ablaufs.
 In Abbildung \ref{fig:Blockdiagramm} befindet sich eine Darstellung der technischen Komponenten und ihren Zusammenhängen. Änderungen werden fortlaufend angepasst.
 
 \chapter{Lösungskonzeption}
@@ -467,6 +467,11 @@ Wir erwarten Winkel zwischen  $\alpha_{min}=8$ und $\alpha_{max}=30$ $ \rightarr
 
 Anhand von Aufgabenstellung, Anforderungen und Risikomanagement ist klar, welche Schnittstellen und/oder Teilkomponenten besonders wichtig sind. Zu den wichtigsten Schnittstellen und/oder Teilkomponenten wurden Versuche aufgebaut, welche entweder eine positive Eigenschaft bestätigen, oder eine negative Eigenschaft hervorheben. Die detaillierten Testprotokolle zu den jeweiligen Versuchen sind im Anhang %TODO EVE Anhangnummer von Versuchen.
 
+\subsection{Schrittmotor}
+
+Bevor der Antrieb getestet werden kann ist ein lauffähiger Schrittmotor notwendig. Dazu wird mit einem Laboraufbau ein erster Versuch erstellt. Der Schrittmotor wird von einer Treiber-Platine mit dem A4988 Treiber-Baustein angetrieben.
+Weil der Motor nicht zum Laufen kommt, müssen beide Komponenten einzeln getestet werden. Es wird festgestellt, dass der Schrittmotor einwandfrei zum laufen kommt. Die Treiber-Platine wird an einem Oszilloskop getestet. Dort wird erkannt, dass die Ausgänge keine Spannung liefern können. Daher liegt ein Defekt vor und es werden neue Treiber-Platinen bestellt. Erste Versuche mit dem laufenden Motor und der Aufhängung müssen aus Zeitlichen Gründen auf PREN 2 verschoben werden.
+
 \subsection{Aufhängung und Antrieb}
 In einem ersten Versuch (Testprotokoll Laufkatze + Antrieb\_V1) wurde festgestellt, dass sich die Konstruktion nicht genügend Symmetrisch verhält. Dadurch hängt die Last nicht zentrisch unter dem Antrieb, sondern kann sich bis zu 1cm nach vorne und nach hinten versetzen. Ob der Versatz nach vorne oder nach hinten ist, hängt von den Beschleunigungen (positiv oder negativ) ab. So können Probleme bei der Positions- und Zielerkennung entstehen.  Es muss ein neuer Prototyp ohne Selbstspannmechanismus konstruiert, hergestellt und getestet werden.
 
@@ -489,7 +494,7 @@ Interessant ist, dass die tatsächlichen Werte des Durchhanges schlecht mit den 
 
 \subsection{Last greifen \& anheben}
 \label{ssec:VersLastg}
-Um die Last zu greifen fiel unsere erste Wahl ursprünglich auf eine Konstruktion mit Elektromagnet. Diesen Elektromagneten wollten wir selbst bauen. Das Testprotokoll «Elektromagnet V1» zeigt, dass die Last zwar angehoben werden konnte, der Elektromagnet jedoch sehr heiss wurde. Dies aufgrund der hohen Leistung von 4W.
+Um die Last zu greifen fiel unsere erste Wahl ursprünglich auf eine Konstruktion mit Elektromagnet. Ursprünglich war es das Ziel den Elektromagneten eigens herzustellen. Das Testprotokoll «Elektromagnet V1» zeigt, dass die Last zwar angehoben werden kann, der Elektromagnet jedoch sehr heiss wurde. Dies aufgrund der hohen Leistung von 4W.
 
 Nach dem Versuch «Elektromagnet V2» wurde klar, dass durch die vorgenommenen Änderungen der Elektromagnet nur noch am Rand eine magnetische Wirkung besitzt.
 
