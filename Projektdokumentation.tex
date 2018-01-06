@@ -126,7 +126,7 @@ Horw, \today
 
 	Das Ergebnis dieser Arbeit ist ein Konzept einer Laufkatze, welche mit Seilrollen angetrieben wird. Unterhalb der Aufhängung ist die Montageplatte und die Hubeinrichtung angebracht. Diese besteht aus einem Hacken welcher mit einer geführten Seilwindenkonstruktion gehoben werden kann. Die Zielplatte wird mittels Bilderkennung erkannt und die Distanz mit Ultraschallsensoren und dem Zählen der Schritte von den Motoren.
 
-	Im Folgemodul Produktentwicklung 2 wird das ausgearbeitete Konzept umgesetzt. Zudem sind diverse Versuche durchzuführen um die Funktionsfähigkeit zu prüfen. Das Ergebnis wird am Ende des Moduls von den Verantwortlichen bei der Schlussvorstellung bewertet. Das Team freut sich auf die weiteren Herausforderungen, welche durch das Verlassen des Teams von einem Teammitglied noch grösser werden.
+	Im Folgemodul Produktentwicklung 2 wird das ausgearbeitete Konzept umgesetzt. Zudem sind diverse Versuche durchzuführen um die Funktionsfähigkeit zu prüfen. Das Ergebnis wird am Ende des Moduls von den Verantwortlichen bei der Schlussvorstellung bewertet. Das Team freut sich auf die weiteren Herausforderungen, welche durch den Wegfall eines Teammitglieds noch grösser werden.
 \end{abstract}
 
 \chapter*{Versionierung}
@@ -156,15 +156,18 @@ Horw, \today
 \label{ch:Intro}
 Dieses Dokument beschreibt den Entwicklungsprozess einer autonomen Laufkatze. Dabei handelt es sich um ein interdisziplinäres Projekt, welches über zwei Semester an der Hochschule Luzern absolviert wurde. In diesem Projekt musste mit einem begrenzten Budget gearbeitet und vielseitige Herausforderungen bewältigt werden.
 
-In einer ersten Phase wurden vor allem Arbeitsprozesse ausgearbeitet, Recherchen betrieben und Konzepte entwickelt. Den schon frühen Entscheid mit \LaTeX  die Dokumentation zu gestalten schien zuerst gewagt, die einzelnen Teammitglieder lernten jedoch schnell mit diesem neuen Werkzeug zu arbeiten.
+In einer ersten Phase wurden vor allem Arbeitsprozesse ausgearbeitet, Recherchen betrieben und Konzepte entwickelt. Den schon frühen Entscheid mit \LaTeX\ die Dokumentation zu gestalten schien zuerst gewagt, die einzelnen Teammitglieder lernten jedoch schnell mit diesem neuen Werkzeug zu arbeiten.
 
-Durch die Konzeptentwicklung konnte sichergestellt werden, dass die Anforderungen mit unserem Konzept erfüllt werden.
-
-
+Durch die Konzeptentwicklung konnte sichergestellt werden, dass die Anforderungen durch unser Konzept erfüllt werden.
 
 \section{Kurzbeschrieb Anforderungen}
 \label{sec:KurzAnforder}
-Das Gerät muss sich autonom entlang eines ansteigenden Drahtseil fortbewegen können. Eine Last muss an einem fix bestimmten Ort aufgehoben werden, ohne Berührung über nachfolgende Hindernisse transportiert und danach möglichst exakt auf einer Zielplatte im Absetzbereich abgesetzt werden (siehe Abb.\ref{fig:Funktionsskizze}). Nach dem Absetzen der Last muss das Gerät den Zielraum erreichen und den Masten berühren. Die Zielplatte muss das Gerät selbstständig erkennen können. Das Gerät darf nur die Last, das Drahtseil und den zweiten Masten berühren. Nach Aufnahme der Last muss die aktuelle Position der Last in x-, und z-Richtung in Echtzeit dargestellt werden. Das Gerät muss innerhalb von zwei Minuten startbereit sein. Die Zeit um den Zielraum zu erreichen liegt bei maximal vier Minuten. In der Abbildung \ref{fig:Ablaufdiagramm} sehen Sie eine anschauliche Darstellung des Ablaufs.
+Das Gerät muss sich autonom entlang eines ansteigenden Drahtseil fortbewegen können. Eine Last muss an einem fix bestimmten Ort aufgehoben werden, ohne Berührung über nachfolgende Hindernisse transportiert und danach möglichst exakt auf einer Zielplatte im Absetzbereich abgesetzt werden (siehe Abb.\ref{fig:Funktionsskizze}).
+
+Nach dem Absetzen der Last muss das Gerät den Zielraum erreichen und den Masten berühren. Die Zielplatte muss das Gerät selbstständig erkennen können. Das Gerät darf nur die Last, das Drahtseil und den zweiten Masten berühren. Nach Aufnahme der Last muss die aktuelle Position der Last in x-, und z-Richtung in Echtzeit dargestellt werden. 
+
+Das Gerät muss innerhalb von zwei Minuten startbereit sein. Die Zeit um den Zielraum zu erreichen liegt bei maximal vier Minuten. In der Abbildung \ref{fig:Ablaufdiagramm} sehen Sie eine anschauliche Darstellung des Ablaufs.
+
 In Abbildung \ref{fig:Blockdiagramm} befindet sich eine Darstellung der technischen Komponenten und ihren Zusammenhängen.
 
 \chapter{Lösungskonzeption}
@@ -172,7 +175,7 @@ In Abbildung \ref{fig:Blockdiagramm} befindet sich eine Darstellung der technisc
 
 \section{Beschreibung der Grundfunktion}
 \label{sec:GrundBeschrieb}
-Die Grundfunktionen des zu bauenden Gerätes sind hauptsächlich das Fortbewegen an einem Drahtseil und das Greifen und Absetzten einer Last. Um die Last zu greifen ist ein Hubmechanismus notwendig, der die Last um mindestens 200mm heben kann. Die aktuelle Position der aufzuhebenden Last wird auf dem Gerät mit einem Display angezeigt. Diese Funktionen laufen bis auf das Startsignal autonom ab. Eine Kamera wird verwendet, um die vorgegebene Zielplattform zu erkennen. Damit ist das Gerät in der Lage an der richtigen Position über dem Mittelpunkt der Zielplattform zu stoppen. Um die aktuelle Position anzeigen zu können, wird ein Ultraschallsensor verwendet.
+Die Grundfunktionen des zu bauenden Gerätes sind hauptsächlich das Fortbewegen an einem Drahtseil und das Greifen und Absetzen einer Last. Um die Last zu greifen ist ein Hubmechanismus notwendig, der die Last um mindestens 200mm heben kann. Die aktuelle Position der aufzuhebenden Last wird auf dem Gerät mit einem Display angezeigt. Diese Funktionen laufen bis auf das Startsignal autonom ab. Eine Kamera wird verwendet, um die vorgegebene Zielplattform zu erkennen. Damit ist das Gerät in der Lage an der richtigen Position über dem Mittelpunkt der Zielplattform zu stoppen. Um die aktuelle Position anzeigen zu können, wird ein Ultraschallsensor verwendet.
 
 \begin{figure}[h!]
 	\includegraphics[keepaspectratio,width=\textwidth]{PrenFunktionsskizze}
@@ -191,7 +194,7 @@ Der Ablauf der verschiedenen Teilschritte erfolgt gemäss Abbildung\ref{fig:Abla
 	\label{fig:Ablaufdiagramm}
 \end{figure}
 
-Im Blockdiagramm \ref{fig:Blockdiagramm} sind die Schnittstellen graphisch dargestellt.
+Im Blockdiagramm (Abb. \ref{fig:Blockdiagramm})s sind die Schnittstellen graphisch dargestellt.
 
 \begin{figure}[h!]
 	\centering
@@ -903,18 +906,22 @@ Legende:
 \chapter{Schlussdiskussion}
 \label{ch:SchlussDisku}
 
-
 \subsection{Erfahrungen, Lessons learned}
 \label{app:ssec:EXP}
-Am Anfang jedes Projekts sind immer viele Fragen offen. Zwar hatte man vieles schon aus den vorherigen Durchführungen gehört, jedoch ist die Aufgabenstellung jedes mal eine andere und somit sind die Hindernisse und Herausforderungen unterschiedlich. Die erste Herausforderung war sich im Team zurechtzufinden und die Aufgabenbereiche zu verteilen. Schnell wurde klar, dass ohne Projektorganisation nichts geht. Daher wurden ein SCRUM-Board und ein Projektplan im GANTT-Format als Hilfsmittel gewählt, welche sich im Verlauf des Projekts bewährt haben.\\
-Die Ideenfindungsphase wurde als spannendste und intensivste Phase aufgefasst. Viele Einfälle wurden gesammelt. Problematisch war jedoch, dass nicht immer alles sofort dokumentiert wurde und dann teilweise nachträglich erledigt werden musste. \\
-Die Testphase verlief nicht ganz so reibungsfrei wie erhofft. Da beim Aufbauen eines Prototyps zum Antrieb Probleme auftauchten, konnte unser Gerät nur bedingt getestet werden. Dafür konnte bei der Bilderkennung ein funktionierender Prototyp erstellt werden. \\
+Am Anfang jedes Projekts sind immer viele Fragen offen. Zwar hatte man vieles schon aus den vorherigen Durchführungen gehört, jedoch ist die Aufgabenstellung jedes mal eine andere und somit sind die Hindernisse und Herausforderungen unterschiedlich. Die erste Herausforderung war sich im Team zurechtzufinden und die Aufgabenbereiche zu verteilen. Schnell wurde klar, dass ohne Projektorganisation nichts geht. Daher wurden ein SCRUM-Board und ein Projektplan im Gantt-Format als Hilfsmittel gewählt, welche sich im Verlauf des Projekts bewährten.
+
+Die Ideenfindungsphase wurde als spannendste und intensivste Phase aufgefasst. Viele Einfälle wurden gesammelt. Problematisch war jedoch, dass nicht immer alles sofort dokumentiert wurde und dann teilweise nachträglich erledigt werden musste.
+
+Die Testphase verlief nicht ganz so reibungsfrei wie erhofft. Da beim Aufbauen eines Prototyps zum Antrieb Probleme auftauchten, konnte unser Gerät nur bedingt getestet werden. Dafür konnte bei der Bilderkennung ein funktionierender Prototyp erstellt werden.
+
 Schlussendlich hat sich die ganze Arbeit doch ausgezahlt, denn aus einer Aufgabenstellung ist ein Konzept entstanden.
 
 \subsection{Offene Punkte und Ausblick PREN 2}
 \label{app:ssec:Futurama}
-Die wichtigsten Entscheide wurden im PREN 1 getroffen. Dabei wurde  das Gesamtsystem in Teilfunktionen aufgeteilt und dazu Teilkonzepte erarbeitet. Sowohl das Teilkonzept wie auch das Gesamtkonzept sind als Prinziplösungen zu verstehen. Manche Ansätze wurden mit Versuchen getestet, andere Systeme wie zum Beispiel der Antrieb konnten nicht getestet werden. Es wird dort davon ausgegangen, dass sie funktionieren. \\
-Da das Gesamtsystem modular aufgebaut ist und nicht vollständig definiert ist, besteht die Möglichkeit, im PREN 2 noch Änderungen vorzunehmen. Es  ist davon auszugehen, dass Änderungen vor allem in nicht getesteten Teilsystemen vorgenommen werden. \\
+Die wichtigsten Entscheide wurden im PREN 1 getroffen. Dabei wurde  das Gesamtsystem in Teilfunktionen aufgeteilt und dazu Teilkonzepte erarbeitet. Sowohl das Teilkonzept wie auch das Gesamtkonzept sind als Prinziplösungen zu verstehen. Manche Ansätze wurden mit Versuchen getestet, andere Systeme wie zum Beispiel der Antrieb konnten nicht getestet werden. Es wird dort davon ausgegangen, dass sie funktionieren.
+
+Da das Gesamtsystem modular aufgebaut ist und nicht vollständig definiert ist, besteht die Möglichkeit, im PREN 2 noch Änderungen vorzunehmen. Es  ist davon auszugehen, dass Änderungen vor allem in nicht getesteten Teilsystemen vorgenommen werden.
+
 Wichtige noch offene Punkte sind das Testen der Antriebs-/ Hubeinheit und die Kommunikation zwischen ET-/IT-Board.
 
 \listoffigures
@@ -2195,5 +2202,5 @@ Für eine genaue Funktion des Durchhangs könnten am Musteraufbau Gewichte an ve
 \label{app:ch:MeilensteinBerichte}
 \includepdf[pages=1]{Meilensteinbericht_01.pdf}
 \includepdf[pages=1]{Meilensteinbericht_02.pdf}
-
+\includepdf[pages=1]{Meilensteinbericht_03.pdf}
 \end{document}
