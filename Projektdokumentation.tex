@@ -221,13 +221,13 @@ Vor und hinter dem Antriebsrad sind im Abstand von 7cm zwei Führungsräder ange
 
 Als Kern der Elektronischen Steuerung wird das \textit{LoFive} Board verwendet, welches mit dem \textit{SiFive Freedom E310} Mikroprozessor bestückt ist. Dieser wurde nach dem offenen Standard der RISC-V Foundation konstruiert und ist daher für jeden einsehbar. Als Programmiersprache wird voraussichtlich Rust verwendet.
 
-Über das Board werden zwei Schrittmotoren-Treiber sowie ein LCD-Display angesteuert. Zur Rückmeldung wird ein Ultraschallsensor und ein \textit{Raspberry Pi 3 Model B} (RasPi) verwendet.
+Über das Board werden zwei Schrittmotoren-Treiber sowie ein LCD-Display angesteuert. Zur Rückmeldung werden zwei Ultraschallsensoren und ein \textit{Raspberry Pi 3 Model B} (RasPi) verwendet.
 
-Weil die Steuerung vom RasPi die Richtung und Distanz zur Zielplattform übermittelt kann das System als Regelungssystem betrachtet werden. Solange das Ziel nicht erkannt wird, soll das Gerät mit maximaler Geschwindigkeit fahren. Mit der Erkennung des Ziels wird das Gerät immer langsamer und stoppt über dem Zielfeld. Mit diesem System wird ein effektives Anfahren des Ziels erreicht. Zum Starten und Stoppen des Geräts wird ein Schalter und ein Taster verwendet.
+Weil die Steuerung vom RasPi die Richtung und Distanz zur Zielplattform übermittelt, kann das System als Regelungssystem betrachtet werden. Solange das Ziel nicht erkannt wird, soll das Gerät mit maximaler Geschwindigkeit fahren. Mit der Erkennung des Ziels wird das Gerät immer langsamer und stoppt über dem Zielfeld. Mit diesem System wird ein effektives Anfahren des Ziels erreicht. Zum Starten und Stoppen des Geräts wird ein Schalter und ein Taster verwendet.
 
 \subsection{Positionsanzeige}
 
-Auf dem Display werden die Koordinaten in x- sowie z-Richtung dargestellt. Die x-Koordinate wird mithilfe des Schrittmotors und zusätzlich mit einem Ultraschall-Distanzsensor bestimmt. Die z-Koordinate wird mittels einer Durchhangstabelle und dem Schrittmotor ermittelt. Das Entwicklungsteam ist sich bewusst, dass Schrittmotoren einerseits Schritte überspringen könnten und die mechanische Umsetzung Schlupf aufweisen kann. Jedoch wird davon ausgegangen, dass der Motor beim Lastanheben keine Schritte überspringt.
+Auf dem LCD-Display werden die Koordinaten in x- sowie z-Richtung dargestellt. Die x-Koordinate wird mithilfe des Schrittmotors und zusätzlich mit einem Ultraschall-Distanzsensor bestimmt. Die z-Koordinate wird mittels einem weiteren Ultraschall-Sensor erkannt. Sobald die Daten des Ultraschall-Sensors stark von der Durchhangsrechnung abweicht, sollen die Daten der Durchhangs-Berechnung angezeigt werden. Damit können Fehler verhindert werden, welche durch Hindernisse auftreten würden.
 
 \newpage
 \subsection{Zielerkennung}
